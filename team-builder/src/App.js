@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import List from './components/List';
 
 
 
@@ -10,7 +11,7 @@ function App() {
   return (
     <div className="App">
        
-       <h1>hello</h1>
+       <List />
       
     </div>
   );
