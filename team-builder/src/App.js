@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 
 import Form from './components/Form';
-import TeamMembers from './components/TeamMembers';
+import Users from './components/Users';
 
 
 function App() {
@@ -15,19 +15,19 @@ const [info, setInfo]=useState([
     role: 'Full Stack Web Developer'
   }
 ]);
-const addNewTeammate = member => {
-      const newTeammate = {
+const addNewInfo = user => {
+      const newUser = {
         id: Date.now(),
-        username: member.username,
-        email: member.email,
-        role: member.role
+        username: user.username,
+        email: user.email,
+        role: user.role
       };
-      setInfo([...info, newTeammate]);
+      setInfo([...info, newUser]);
 
   return (
     <div className="App">
-       <Form addNewTeammate={addNewTeammate}/>
-       <TeamMembers info={info} />
+       
+       
       
     </div>
   );
