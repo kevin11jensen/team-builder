@@ -8,17 +8,20 @@ const Form = props => {
         role: ''
     });
 
-    const handleChange = event => {
+    const handleChange = e => {
         setMember({
             ...member,
-            [event.target.name]: event.target.value
+            [e.target.name]: e.target.value
         });
-        console.log(event.target.name);
+        console.log(e.target.name);
     }
 
-    const submitHandler = event => {
-        event.preventDefault();
-        props.addNewInfo(member);
+    const submitHandler = e => {
+        console.log('member.name');
+        console.log('member.email');
+        console.log('member.role');
+        e.preventDefault();
+        props.addNewTeammate(member);
         setMember({username: '', email: '', role: ''})
     };
 
@@ -26,6 +29,16 @@ const Form = props => {
         <form onSubmit={submitHandler}>
             <label>
                 Name:
+                <input
+                    type='text'
+                    placeholder='Kevin Jensen'
+                    name='username'
+                    value={member.username}
+                    onChange={handleChange}
+                />
+            </label><br />
+            <label>
+            Email:
                 <input
                     type='text'
                     placeholder='email@email.com'
@@ -45,7 +58,7 @@ const Form = props => {
                 />
             </label><br />
 
-            <button type = 'submit'>Add Team Member</button>
+            <button type = 'submit'>Add Team New Member</button>
             
         </form>
     )

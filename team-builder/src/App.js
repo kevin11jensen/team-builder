@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-
 import './App.css';
-import TeamMembers from './components/TeamMembers';
+
 import Form from './components/Form';
+import TeamMembers from './components/TeamMembers';
+
 
 function App() {
 
@@ -14,12 +15,12 @@ const [info, setInfo]=useState([
     role: 'Full Stack Web Developer'
   }
 ]);
-const addNewTeammate = teammate => {
+const addNewTeammate = member => {
       const newTeammate = {
         id: Date.now(),
-        username: teammate.username,
-        email: teammate.email,
-        role: teammate.role
+        username: member.username,
+        email: member.email,
+        role: member.role
       };
       setInfo([...info, newTeammate]);
 
